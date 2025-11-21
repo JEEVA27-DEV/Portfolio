@@ -1,0 +1,586 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JEEVA B — Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <meta name="description" content="Jeeva B — Java Full Stack Developer | Portfolio">
+  <style>
+    :root{--accent:#0d6efd;--muted:#6c757d}
+    html,body{height:100%}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;padding-top:70px}
+    .hero{background:linear-gradient(135deg,rgba(13,110,253,0.06),rgba(13,110,253,0.02));padding:60px 0}
+    .avatar{width:360px;height:420px;border-radius:12px;object-fit:cover;box-shadow:0 6px 20px rgba(13,110,253,0.12)}
+    .card-compact{border-radius:14px}
+    .skill-pill{border-radius:999px;padding:.35rem .8rem;margin:.25rem .25rem;background:#f8f9fa;border:1px solid #e9ecef}
+    .project-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.06)}
+    .nav-link.active{font-weight:600}
+    footer{background:#f8f9fa}
+    @media(min-width:992px){.container-lg{max-width:1100px}}
+    /* ---- BLUE NAVBAR ---- */
+.navbar {
+  background: #0d6efd !important;
+}
+
+.navbar .nav-link,
+.navbar-brand,
+.navbar .btn-outline-primary {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.navbar .nav-link.active {
+  color: #ffe082 !important; /* highlighted link */
+}
+
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.5);
+}
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+/* Smooth Theme Transition */
+* {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Smooth transition */
+* {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+/* LIGHT MODE */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #000000;
+  --muted: #6c757d;
+  --card: #ffffff;
+  --nav: #0d6efd;
+  --skill-bg: #ffffff;
+  --badge-bg: #f8f9fa;
+}
+
+/* DARK MODE */
+:root[data-theme="dark"] {
+  --bg: #121212;
+  --text: #f1f1f1;
+  --muted: #bbbbbb;
+  --card: #1e1e1e;
+  --nav: #0a58ca;
+  --skill-bg: #1e1e1e;
+  --badge-bg: #2c2c2c;
+}
+
+/* Apply theme colors */
+body {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Every text element */
+p, small, li, h1, h2, h3, h4, h5, h6,
+.card-text, .text-muted {
+  color: var(--text) !important;
+}
+
+/* Muted text */
+.text-muted {
+  color: var(--muted) !important;
+}
+
+/* Cards, projects, footer */
+.card, .project-card, footer {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--nav) !important;
+}
+
+.navbar .nav-link,
+.navbar-brand,
+.navbar .btn-outline-primary,
+.navbar .btn {
+  color: #fff !important;
+}
+
+.navbar .nav-link.active {
+  color: #ffe082 !important;
+}
+
+/* Skill items */
+.skill-item {
+  background: var(--skill-bg) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: var(--text) !important;
+}
+
+/* Badges */
+.badge {
+  background: var(--badge-bg) !important;
+  color: var(--text) !important;
+}
+/* Fix theme toggle button text color */
+#themeToggle {
+  color: #000 !important;        /* Light mode text */
+  background-color: #fff !important;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+:root[data-theme="dark"] #themeToggle {
+  color: #fff !important;        /* Dark mode text */
+  background-color: #1e1e1e !important;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+/* Fix navbar subtitle text visibility in dark & light themes */
+.navbar small {
+  color: var(--text) !important;
+  opacity: 0.85;
+}
+/* Fix navbar subtitle visibility */
+.navbar small {
+  color: var(--text) !important;
+  opacity: 0.85;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.navbar small:hover {
+  opacity: 1;
+  text-shadow: 0 0 6px var(--text), 0 0 12px var(--accent);
+}
+/* MARQUEE STYLES */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: var(--card);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.marquee {
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  color: var(--text);
+  animation: marqueeScroll 22s linear infinite;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+}
+
+/* Animation */
+@keyframes marqueeScroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* Glow on hover */
+.marquee:hover {
+  text-shadow: 0 0 8px var(--accent);
+  animation-play-state: paused;
+}
+
+/* Responsive text size */
+@media (max-width: 768px) {
+  .marquee { font-size: 0.95rem; }
+}
+@media (max-width: 480px) {
+  .marquee { font-size: 0.85rem; }
+}
+/* PREMIUM HOVER EFFECT FOR PROFILE IMAGE */
+.avatar {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+  transition: transform .4s ease, box-shadow .4s ease, filter .4s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.12) rotate(1deg);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+  filter: brightness(1.15) saturate(1.2);
+  cursor: pointer;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <div class="fw-bold">JEEVA B</div>
+        <small class="text-muted">Java Full Stack Developer</small>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-3">
+            <a class="btn btn-outline-primary btn-sm" href="./Jeeva-B-Resume.pdf" target="_blank"><i class="bi bi-file-earmark-pdf-fill"></i> Resume</a>
+          </li>
+          <li class="nav-item ms-3">
+  <button id="themeToggle" class="btn btn-light btn-sm">
+    🌙 Dark Mode
+  </button>
+</li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h1 class="display-6 mb-2">Hi, I'm <span class="text-primary">Jeeva B</span></h1>
+          <p class="lead text-muted">Java Full Stack Developer building scalable backend services and responsive frontend. Passionate about clean code, problem solving and real-world projects.</p>
+          <div class="d-flex gap-2 mt-3">
+            <a class="btn btn-primary btn-lg" href="#projects">View Projects</a>
+            <a class="btn btn-outline-secondary btn-lg" href="mailto:jeevabalu34@gmail.com">Contact Me</a>
+          </div>
+          <div class="mt-4">
+            <a class="me-3 text-decoration-none" href="https://github.com/JEEVA27-DEV" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+            <a class="me-3 text-decoration-none" href="https://www.linkedin.com/in/jeevab2711" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center mt-4 mt-lg-0">
+          <img src="./jeeva B.jpg" alt="avatar" class="avatar mb-3">
+          <!-- <div class="card p-3 card-compact shadow-sm">
+            <div class="d-flex justify-content-between">
+              <div>
+                <div class="small text-muted">Email</div>
+                <div class="fw-bold">jeevabalu34@gmail.com</div>
+              </div>
+              <div class="text-end">
+                <div class="small text-muted">Phone</div>
+                <div class="fw-bold">+91-95974-89502</div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MARQUEE SECTION -->
+<section id="marquee" class="py-3 mt-2">
+  <div class="marquee-container">
+    <div class="marquee">
+      🚀 Java Full Stack Developer • Spring Boot • Hibernate • REST API • PostgreSQL • MySQL • Bootstrap • Responsive Web Design • Problem Solver • Backend Developer • Git & GitHub •  
+    </div>
+  </div>
+</section>
+
+  <main class="container my-5">
+    <!-- ABOUT -->
+    <section id="about" class="mb-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+          <h3>About Me</h3>
+          <p class="text-muted">I am a Java Full Stack Developer with hands-on experience in designing and implementing web applications using Spring Boot, Hibernate, JDBC, and responsive frontends with HTML, CSS, JavaScript and Bootstrap. I enjoy solving real-world problems and building reliable systems.</p>
+          <ul>
+            <li>Strong fundamentals in Core Java and OOP.</li>
+            <li>Experience with REST API design, JPA/Hibernate, and database design (MySQL, PostgreSQL).</li>
+            <li>Comfortable with front-end development using HTML, CSS, JS and Bootstrap.</li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <div class="card p-3">
+            <h6 class="mb-2">Quick Info</h6>
+            <p class="mb-1"><strong>Location:</strong> Madurai, TamilNadu</p>
+            <p class="mb-1"><strong>Availability:</strong> Open to opportunities</p>
+            <p class="mb-0"><strong>Languages:</strong> English, Tamil</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+   <!-- SKILLS -->
+<section id="skills" class="mb-5">
+  <h3>Skills</h3>
+
+  <style>
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      padding: 10px 16px;
+      border-radius: 50px;
+      margin: 6px;
+      border: 1px solid #e9ecef;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .skill-item img {
+      width: 26px;
+      height: 26px;
+    }
+    .skill-item:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    }
+  </style>
+
+  <div class="d-flex flex-wrap align-items-center mt-3">
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+      Java
+    </div>
+
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg">
+      Spring Boot
+    </div>
+
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg">
+      Hibernate
+    </div> 
+
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+      MySQL
+    </div>
+
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg">
+      PostgreSQL
+    </div>
+
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+      HTML
+    </div>
+
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+      CSS
+    </div>
+
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+      JavaScript
+    </div>
+
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
+      Bootstrap
+    </div>
+
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+      Git
+    </div>
+  </div>
+</section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mb-5">
+      <h3>Projects</h3>
+      <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+        <!-- Project 1 -->
+        <div class="col">
+  <div class="card p-3 project-card h-100 card-compact">
+    <div class="card-body">
+      <h5 class="card-title">Personal Portfolio Website</h5>
+      <p class="card-text text-muted">
+        Built a fully responsive and modern personal portfolio website using HTML, CSS, JavaScript, and Bootstrap to showcase projects, skills, and achievements. Implemented clean UI components, smooth navigation, and mobile-first design with optimized layout using Bootstrap’s grid system. Deployed the site on GitHub Pages with Git-based version control for easy updates and maintenance.
+      </p>
+      <p class="mb-1"><strong>Highlights:</strong> Responsive design, Clean UI, Smooth navigation, GitHub Pages deployment.</p>
+      <div class="mt-3">
+        <span class="badge bg-light text-dark">HTML</span>
+        <span class="badge bg-light text-dark">CSS</span>
+        <span class="badge bg-light text-dark">JavaScript</span>
+        <span class="badge bg-light text-dark">Bootstrap</span>
+        <span class="badge bg-light text-dark">GitHub Pages</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- Project 2 -->
+        <div class="col">
+          <div class="card p-3 project-card h-100 card-compact">
+            <div class="card-body">
+              <h5 class="card-title">Flight Booking System (Backend Project)</h5>
+              <p class="card-text text-muted">Backend system to manage flight bookings built with Java, Spring Boot and Hibernate. Implemented booking workflow, seat-inventory logic, API testing with Postman and database optimizations using PostgreSQL.</p>
+              <p class="mb-1"><strong>Highlights:</strong> Entity relationships, exception handling and performance improvements.</p>
+              <div class="mt-3">
+                <span class="badge bg-light text-dark">Java</span>
+                <span class="badge bg-light text-dark">Spring Boot</span>
+                <span class="badge bg-light text-dark">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="mb-5">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h3>Education</h3>
+          <div class="card p-3">
+            <h6>B.E. Electronics and Communication Engineering</h6>
+            <small class="text-muted">P.S.N.A College Of Engineering And Technology, Dindigul — 2021–2025</small>
+            <hr>
+            <h6>Higher Secondary Certificate (HSC)</h6>
+            <small class="text-muted">Thiru.Vi.Ka Corporation Hr. Sec. School, Madurai — 2020–2021</small>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3>Certifications</h3>
+          <div class="card p-3">
+            <p class="mb-1"><strong>Java Masterclass — Udemy</strong> (June 2025)</p>
+            <p class="mb-1"><strong>Spring, Spring Boot Hibernate — Udemy</strong> (June 2025)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="mb-5">
+      <h3>Achievements</h3>
+      <div class="card p-3">
+        <ul class="mb-0">
+          <li>Winner — Anna University Zone-17 Ball Badminton (2022–2023, 2023–2024, 2024–2025)</li>
+          <li>Runner-Up — Anna University Inter-Zone Ball Badminton (2023–2024, 2024–2025)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mb-5">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h3>Contact</h3>
+          <p class="text-muted">Feel free to reach out for project collaborations, internships or full-time roles.</p>
+          <ul class="list-unstyled">
+            <li><strong>Email:</strong> jeevabalu34@gmail.com</li>
+            <li><strong>Phone:</strong> +91-95974-89502</li>
+          </ul>
+          <div class="mt-3">
+            <a class="btn btn-primary me-2" href="mailto:jeevabalu34@gmail.com"><i class="bi bi-envelope-fill"></i> Email</a>
+            <a class="btn btn-outline-secondary" href="https://github.com/JEEVA27-DEV" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card p-3 h-100">
+            <h6>Send a quick message</h6>
+            <form id="contactForm" onsubmit="return handleContact(event)">
+              <div class="mb-2">
+                <input id="name" class="form-control" placeholder="Your name" required="">
+              </div>
+              <div class="mb-2">
+                <input id="email" type="email" class="form-control" placeholder="Your email" required="">
+              </div>
+              <div class="mb-2">
+                <textarea id="message" class="form-control" rows="4" placeholder="Message" required=""></textarea>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-primary">Send</button>
+              </div>
+              <div id="contactAlert" class="mt-2" style="display:none"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-4">
+    <div class="container text-center text-muted small">
+      © <span id="year">2025</span> Jeeva B — Built with HTML,CSS,JavaScript and Bootstrap • <a href="./Jeeva-B-Resume.pdf" target="_blank">View Resume</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('a.nav-link').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        if(!id || id === '#') return;
+        document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
+        // collapse navbar on mobile
+        const bsCollapse = document.querySelector('.navbar-collapse');
+        if(bsCollapse.classList.contains('show')){
+          new bootstrap.Collapse(bsCollapse).hide();
+        }
+      })
+    })
+
+    // Contact handler (client-side only) - opens mailto to preserve privacy and avoid backend
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent(message + '\n\nFrom: ' + name + ' - ' + email);
+      window.location.href = 'mailto:jeevabalu34@gmail.com?subject='+subject+'&body='+body;
+      return false;
+    }
+
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Activate nav link on scroll
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function onScroll(){
+      let index = sections.length;
+      while(--index && window.scrollY + 120 < sections[index].offsetTop){}
+      navLinks.forEach(l=>l.classList.remove('active'));
+      const id = sections[index] ? ('#'+sections[index].id) : '#about';
+      document.querySelectorAll('.nav-link').forEach(l=>{ if(l.getAttribute('href')===id) l.classList.add('active') });
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    // THEME TOGGLE
+const themeToggle = document.getElementById("themeToggle");
+
+// Load saved theme
+let currentTheme = localStorage.getItem("theme") || "light";
+document.documentElement.setAttribute("data-theme", currentTheme);
+themeToggle.innerHTML = currentTheme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
+
+themeToggle.addEventListener("click", () => {
+  let newTheme = currentTheme === "light" ? "dark" : "light";
+
+  document.documentElement.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
+
+  themeToggle.innerHTML = newTheme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
+  currentTheme = newTheme;
+});
+
+  </script>
+
+
+</body></html>
